@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical">
+
+    <!-- 个人资料区：点击进入自己的资料详情 -->
+    <LinearLayout
+        android:id="@+id/ll_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/space_16"
+        android:paddingTop="@dimen/space_24"
+        android:paddingEnd="@dimen/space_16"
+        android:paddingBottom="@dimen/space_24">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/avatar_large"
+            android:layout_height="@dimen/avatar_large"
+            android:contentDescription="@string/tab_me"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/space_16"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/WeChatListPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_wechat_id"
+                style="@style/WeChatListSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_6" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/space_8"
+            android:contentDescription="@string/me_qrcode"
+            app:srcCompat="@drawable/ic_mini_program"
+            app:tint="@color/text_tertiary" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/space_8"
+            android:contentDescription="@string/menu_more"
+            app:srcCompat="@drawable/ic_arrow_right"
+            app:tint="@color/text_tertiary" />
+
+    </LinearLayout>
+
+    <!-- 「我」分页的功能列表用 ListView：行布局自带分隔线和分组间距，
+         这里关掉 ListView 自己的 divider，避免重复画线 -->
+    <ListView
+        android:id="@+id/lv_entries"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:overScrollMode="never" />
+
+</LinearLayout>

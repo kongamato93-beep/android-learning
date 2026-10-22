@@ -1,0 +1,6 @@
+# 真实配置文件不进版本库（.env.example 是模板，要留着）
+.env
+!.env.example
+
+node_modules/
+npm-debug.log*

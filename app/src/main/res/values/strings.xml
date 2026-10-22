@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">aichat</string>
+
+    <string name="tab_chat">微信</string>
+    <string name="tab_contacts">通讯录</string>
+    <string name="tab_discover">发现</string>
+    <string name="tab_me">我</string>
+
+    <string name="search_hint">搜索</string>
+    <string name="menu_more">更多功能</string>
+    <string name="msg_not_implemented">该功能本期未实现</string>
+    <string name="msg_empty">暂时没有内容</string>
+    <string name="msg_click_conversation">你点击了：%1$s</string>
+    <string name="msg_current_login_user">当前登录用户：%1$s</string>
+
+    <string name="chat_input_hint">发消息…</string>
+    <string name="chat_send">发送</string>
+
+    <!-- 通讯录固定入口 -->
+    <string name="contacts_new_friend">新的朋友</string>
+    <string name="contacts_group_chat">群聊</string>
+    <string name="contacts_tag">标签</string>
+    <string name="contacts_official">公众号</string>
+
+    <!-- 联系人详情 -->
+    <string name="contact_remark">备注</string>
+    <string name="contact_moments">朋友圈</string>
+    <string name="contact_more_info">更多信息</string>
+    <string name="contact_send_message">发消息</string>
+    <string name="contact_voice_call">语音通话</string>
+    <string name="contact_video_call">视频通话</string>
+    <string name="contact_wechat_id_prefix">ID：</string>
+    <string name="contact_region_prefix">地区：</string>
+    <string name="contact_signature_prefix">个性签名：</string>
+
+    <!-- 发现页 -->
+    <string name="discover_moments">朋友圈</string>
+    <string name="discover_channels">视频号</string>
+    <string name="discover_live">直播</string>
+    <string name="discover_scan">扫一扫</string>
+    <string name="discover_shake">摇一摇</string>
+    <string name="discover_top_stories">看一看</string>
+    <string name="discover_search">搜一搜</string>
+    <string name="discover_mini_program">小程序</string>
+
+    <!-- 我 -->
+    <string name="me_services">服务</string>
+    <string name="me_favorites">收藏</string>
+    <string name="me_moments">朋友圈</string>
+    <string name="me_album">作品</string>
+    <string name="me_cards">小店与卡包</string>
+    <string name="me_sticker">表情</string>
+    <string name="me_settings">设置</string>
+
+    <!-- 设置 -->
+    <string name="settings_account">账号与安全</string>
+    <string name="settings_notification">消息通知</string>
+    <string name="settings_privacy">隐私</string>
+    <string name="settings_general">通用</string>
+    <string name="settings_about">关于 aichat</string>
+    <string name="settings_help">帮助与反馈</string>
+    <string name="settings_switch_account">切换账号</string>
+    <string name="settings_logout">退出登录</string>
+    <string name="settings_logout_confirm">确定要退出登录吗？</string>
+    <string name="settings_logout_done">已退出（演示）</string>
+    <string name="settings_about_version">版本 1.0.0</string>
+
+    <!-- 我页资料 -->
+    <string name="me_qrcode">二维码</string>
+
+    <!-- 开发测试入口：单机没有真实来信，用它验证未读逻辑，将来接 Agent 时由消息处理器取代 -->
+    <string name="debug_receive_here">[测试] 对方回复本会话</string>
+    <string name="debug_receive_other">[测试] 其他会话来消息</string>
+    <string name="debug_receive_conversation">[测试] 收到一条消息</string>
+    <string name="debug_received">已模拟收到一条消息</string>
+
+    <!-- 长按会话菜单 -->
+    <string name="menu_pin">置顶该聊天</string>
+    <string name="menu_unpin">取消置顶</string>
+    <string name="msg_pinned">已置顶</string>
+    <string name="msg_unpinned">已取消置顶</string>
+
+    <string name="menu_group_chat">发起群聊</string>
+    <string name="menu_add_friend">添加朋友</string>
+    <string name="menu_scan">扫一扫</string>
+    <string name="menu_pay">收付款</string>
+
+    <!-- 启动初始化 -->
+    <string name="init_failed_title">数据初始化失败</string>
+    <string name="init_failed_message">本地数据库无法打开，聊天记录暂时读不到。\n\n错误：%1$s</string>
+    <string name="init_retry">重试</string>
+    <string name="init_exit">退出</string>
+
+    <!-- 写库失败：提示用户“这一步没存下来”，界面同时回滚到写入前的状态 -->
+    <string name="msg_write_failed">数据没能写入本地数据库，本次改动已撤销</string>
+
+    <!-- AI 回复：加载态与各类失败。
+         刻意把「请求失败」和「保存失败」分成两组文案：
+         前者用户的消息已经存下来了，只是没拿到回复；后者回复拿到了但没写进本地。 -->
+    <string name="ai_thinking">对方正在输入…</string>
+    <string name="ai_waiting">上一条还在等回复，稍等一下</string>
+    <string name="ai_error_not_configured">未配置 API Key，无法调用 AI（见 local.properties）</string>
+    <string name="ai_error_timeout">AI 回复超时，请稍后再试</string>
+    <string name="ai_error_network">网络不可用，AI 没能回复</string>
+    <string name="ai_error_http">AI 服务返回错误（%1$d）</string>
+    <string name="ai_error_parse">AI 返回的内容无法解析</string>
+    <string name="ai_error_empty">AI 这次没有返回内容</string>
+    <string name="ai_error_save_failed">AI 回复没能写入本地消息列表</string>
+    <string name="ai_error_unknown">AI 回复失败：%1$s</string>
+    <string name="msg_ai_save_failed">AI 回复没能保存到本地，已撤销（你发的消息已保存）</string>
+</resources>

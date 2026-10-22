@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 结构高度 -->
+    <dimen name="toolbar_height">48dp</dimen>
+    <dimen name="tab_height">56dp</dimen>
+    <dimen name="tab_icon_size">26dp</dimen>
+    <dimen name="input_bar_height">52dp</dimen>
+    <dimen name="conversation_item_height">64dp</dimen>
+    <dimen name="contact_item_height">56dp</dimen>
+    <dimen name="common_item_height">56dp</dimen>
+
+    <!-- 间距 -->
+    <dimen name="space_2">2dp</dimen>
+    <dimen name="space_4">4dp</dimen>
+    <dimen name="space_6">6dp</dimen>
+    <dimen name="space_8">8dp</dimen>
+    <dimen name="space_10">10dp</dimen>
+    <dimen name="space_12">12dp</dimen>
+    <dimen name="space_16">16dp</dimen>
+    <dimen name="space_24">24dp</dimen>
+
+    <!-- 相邻两条消息之间的间隔 -->
+    <dimen name="message_gap">8dp</dimen>
+
+    <!-- 头像 -->
+    <dimen name="avatar_list">40dp</dimen>
+    <dimen name="avatar_contact">44dp</dimen>
+    <dimen name="avatar_chat">40dp</dimen>
+    <dimen name="avatar_large">64dp</dimen>
+
+    <!-- 圆角 -->
+    <dimen name="radius_avatar">4dp</dimen>
+    <dimen name="radius_bubble">6dp</dimen>
+    <dimen name="radius_card">4dp</dimen>
+    <dimen name="radius_search">4dp</dimen>
+
+    <!-- 字号：微信 Android 常用档位 -->
+    <dimen name="text_title">17sp</dimen>
+    <dimen name="text_primary">16sp</dimen>
+    <dimen name="text_secondary">14sp</dimen>
+    <dimen name="text_hint">12sp</dimen>
+    <dimen name="text_tab">12sp</dimen>
+
+    <!-- 列表分隔线起点：与文字左边缘对齐，不通栏 -->
+    <dimen name="bubble_max_width">240dp</dimen>
+    <dimen name="divider_start">64dp</dimen>
+    <dimen name="divider_height">0.5dp</dimen>
+</resources>

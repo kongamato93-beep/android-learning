@@ -1,0 +1,9 @@
+﻿方法调用失败，因为 [System.Object[]] 不包含名为“op_Subtraction”的方法。
+所在位置 D:\andriod\WeChat\docs\figures\draw_figs.ps1:119 字符: 5
++     $pts = @(
++     ~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (op_Subtraction:String) []，Run 
+   timeException
+    + FullyQualifiedErrorId : MethodNotFound
+ 
+

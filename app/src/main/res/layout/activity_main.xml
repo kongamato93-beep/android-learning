@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 顶部标题栏：48dp，标题居左，右侧操作入口 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/toolbar_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/WeChatToolbarTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="@dimen/space_16"
+            android:paddingEnd="@dimen/space_16"
+            android:text="@string/tab_chat" />
+
+        <ImageView
+            android:id="@+id/iv_action"
+            android:layout_width="@dimen/toolbar_height"
+            android:layout_height="@dimen/toolbar_height"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/menu_more"
+            android:padding="@dimen/space_12"
+            app:srcCompat="@drawable/ic_add"
+            app:tint="@color/text_primary" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/divider_strong" />
+
+    <!-- clipChildren=false：允许 Tab 图标右上角的未读角标画到图标外面 -->
+    <LinearLayout
+        android:id="@+id/ll_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_height"
+        android:background="@color/tab_bg"
+        android:clipChildren="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/tab_chat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clipChildren="false"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="@dimen/tab_icon_size"
+                android:layout_height="@dimen/tab_icon_size"
+                android:clipChildren="false">
+
+                <ImageView
+                    android:layout_width="@dimen/tab_icon_size"
+                    android:layout_height="@dimen/tab_icon_size"
+                    android:contentDescription="@string/tab_chat"
+                    app:srcCompat="@drawable/tab_icon_chat"
+                    app:tint="@color/tab_icon_tint" />
+
+                <!-- Tab 未读角标：显示所有会话的未读总数 -->
+                <TextView
+                    android:id="@+id/tv_tab_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="-5dp"
+                    android:layout_marginEnd="-7dp"
+                    android:background="@drawable/bg_badge_unread"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:minWidth="16dp"
+                    android:paddingStart="5dp"
+                    android:paddingTop="1dp"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="1dp"
+                    android:textColor="@color/text_on_badge"
+                    android:textSize="10sp"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <TextView
+                style="@style/WeChatTabText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:text="@string/tab_chat" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_contacts"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/tab_icon_size"
+                android:layout_height="@dimen/tab_icon_size"
+                android:contentDescription="@string/tab_contacts"
+                app:srcCompat="@drawable/tab_icon_contacts"
+                app:tint="@color/tab_icon_tint" />
+
+            <TextView
+                style="@style/WeChatTabText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:text="@string/tab_contacts" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_discover"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/tab_icon_size"
+                android:layout_height="@dimen/tab_icon_size"
+                android:contentDescription="@string/tab_discover"
+                app:srcCompat="@drawable/tab_icon_discover"
+                app:tint="@color/tab_icon_tint" />
+
+            <TextView
+                style="@style/WeChatTabText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:text="@string/tab_discover" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tab_me"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/tab_icon_size"
+                android:layout_height="@dimen/tab_icon_size"
+                android:contentDescription="@string/tab_me"
+                app:srcCompat="@drawable/tab_icon_me"
+                app:tint="@color/tab_icon_tint" />
+
+            <TextView
+                style="@style/WeChatTabText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_2"
+                android:text="@string/tab_me" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--
+        导航栏占位：edge-to-edge 下窗口会一直画到导航栏下面，
+        这一条被撑到导航栏的高度、底色和 Tab 栏一致，Tab 才不会被导航条压住。
+        高度是 0dp，实际值由 InsetsHelper 按系统给的 inset 填。
+    -->
+    <View
+        android:id="@+id/nav_bar_space"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/tab_bg" />
+
+</LinearLayout>

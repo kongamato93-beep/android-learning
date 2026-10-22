@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- 分组间隔：微信在两个功能区之间放一段灰底。
+         ListView 的 item 没法用 LayoutParams 设外边距（AbsListView.LayoutParams 不支持 margin），
+         所以用一个可显隐的占位 View 撑开，效果和外边距一样 -->
+    <View
+        android:id="@+id/view_group_space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_8"
+        android:background="@color/page_bg"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_item_height"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/space_12"
+        android:paddingEnd="@dimen/space_12">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:contentDescription="@string/menu_more" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/WeChatListPrimary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_12"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_extra"
+            style="@style/WeChatListSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="@dimen/space_6"
+            android:contentDescription="@string/menu_more"
+            app:srcCompat="@drawable/ic_arrow_right"
+            app:tint="@color/text_tertiary" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginStart="@dimen/divider_start"
+        android:background="@color/divider" />
+
+</LinearLayout>

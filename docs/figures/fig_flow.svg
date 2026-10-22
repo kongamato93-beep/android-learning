@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1420" viewBox="0 0 1080 1420">
+<rect width="1080" height="1420" fill="#ffffff"/>
+<defs>
+  <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto">
+    <path d="M0,0 L10,5 L0,10 z" fill="#2b2b2b"/>
+  </marker>
+  <marker id="openArrow" markerWidth="14" markerHeight="14" refX="12" refY="6" orient="auto">
+    <path d="M0,1 L12,6 L0,11" fill="none" stroke="#2b2b2b" stroke-width="1.6"/>
+  </marker>
+  <marker id="diamond" markerWidth="18" markerHeight="10" refX="1" refY="5" orient="auto">
+    <path d="M0,5 L8,0 L16,5 L8,10 z" fill="#2b2b2b" stroke="#2b2b2b"/>
+  </marker>
+</defs>
+<rect x="280.0" y="22.0" width="240" height="56" rx="28.0" fill="#eceff3" stroke="#2b2b2b" stroke-width="2"/>
+<text x="400" y="56.48" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="18" fill="#111" text-anchor="middle">开始</text>
+<path d="M400,78 L400,122" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="165.0" y="142.0" width="470" height="56" rx="4" fill="#ffffff" stroke="#2b2b2b" stroke-width="2"/>
+<text x="400" y="176.48" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="18" fill="#111" text-anchor="middle">getView(position, convertView, parent)</text>
+<path d="M400,198 L400,250" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M400,255.0 L550.0,310 L400,365.0 L250.0,310 z" fill="#fff8e6" stroke="#2b2b2b" stroke-width="2"/>
+<text x="400" y="317.2" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="20" fill="#111" text-anchor="middle">convertView == null ?</text>
+<path d="M400,365 L400,420" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="414" y="398.5" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="16" fill="#c0392b">是（第一次显示，没有可复用的行）</text>
+<path d="M550,310 L720,310" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="560" y="300" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="16" fill="#c0392b">否（有缓存行）</text>
+<rect x="570.0" y="375.0" width="300" height="90" rx="4" fill="#ffffff" stroke="#2b2b2b" stroke-width="2"/>
+<text x="720" y="414.62" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="17" fill="#111" text-anchor="middle">holder = (ViewHolder)</text>
+<text x="720" y="437.62" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="17" fill="#111" text-anchor="middle">convertView.getTag()</text>
+<path d="M720,310 L720,375" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M720,465 L720,560" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="235.0" y="435.0" width="330" height="110" rx="4" fill="#ffffff" stroke="#2b2b2b" stroke-width="2"/>
+<text x="400" y="484.62" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="17" fill="#111" text-anchor="middle">inflate(item_conversation.xml)</text>
+<text x="400" y="507.62" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="17" fill="#111" text-anchor="middle">→ new ViewHolder(convertView)</text>
+<path d="M400,545 L400,600" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="235.0" y="610.0" width="330" height="80" rx="4" fill="#ffffff" stroke="#2b2b2b" stroke-width="2"/>
+<text x="400" y="656.12" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="17" fill="#111" text-anchor="middle">convertView.setTag(holder)</text>
+<path d="M400,690 L400,760" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M400,760 L720,760" stroke="#2b2b2b" stroke-width="2" fill="none"/>
+<circle cx="720" cy="760" r="6" fill="#2b2b2b"/>
+<path d="M720,760 L720,830" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="460.0" y="845.0" width="520" height="70" rx="4" fill="#ffffff" stroke="#2b2b2b" stroke-width="2"/>
+<text x="720" y="874.62" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="17" fill="#111" text-anchor="middle">取出 position 对应的 Conversation</text>
+<text x="720" y="897.62" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="17" fill="#111" text-anchor="middle">peer = repository.getContact(peerId)</text>
+<path d="M720,915 L720,975" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="440.0" y="985.0" width="560" height="90" rx="4" fill="#ffffff" stroke="#2b2b2b" stroke-width="2"/>
+<text x="720" y="1024.62" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="17" fill="#111" text-anchor="middle">设置头像 / 昵称 / 最后一条消息 / 时间 / 未读角标</text>
+<text x="720" y="1047.62" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="17" fill="#111" text-anchor="middle">置顶会话换浅灰底</text>
+<path d="M720,1075 L720,1140" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="570.0" y="1145.0" width="300" height="70" rx="4" fill="#ffffff" stroke="#2b2b2b" stroke-width="2"/>
+<text x="720" y="1186.48" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="18" fill="#111" text-anchor="middle">return convertView</text>
+<path d="M720,1215 L720,1275" stroke="#2b2b2b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="620.0" y="1282.0" width="200" height="56" rx="28.0" fill="#eceff3" stroke="#2b2b2b" stroke-width="2"/>
+<text x="720" y="1316.48" font-family="Microsoft YaHei, SimSun, sans-serif" font-size="18" fill="#111" text-anchor="middle">结束</text>
+</svg>
