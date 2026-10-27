@@ -1,4 +1,4 @@
-### 10月22日学习日志
+##git和.md如何使用
 
 # git如何使用
 
@@ -16,28 +16,29 @@ safe.directory=*
 user.name=kongamato
 user.email=kongamato93@gmail.com
 ```
-## 2.基础命令
-### 1)新建本地仓库
+## 2.第一次上传
+```bash
 git init
-### 2）查看文件改动改成
-git status
-红色：改动了但还没放进暂存区
-绿色：
-加入暂存区：git add 文件名
-将所有文件加入缓存区：git add .
-将暂存区中的内容保存为一个版本(提交至本地仓库)：git commit -m"备注：内容"(添加备注)
-保存到远程仓库：git push
-## 3.绑定远程仓库
-git remote add origin 仓库地址
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/用户名/仓库名.git
+git push -u origin main
+```
+每条命令的作用：
+| 指令	| 作用 |
+| --- | --- |
+git init	| 初始化本地 Git 仓库
+git add .	|选中要纳入版本记录的文件
+git commit	|保存第一个版本
+git remote add origin	|记录 GitHub 仓库地址
+git push -u origin main	|首次上传并设置分支跟踪关系
+
+以后不需要反复 git init 或 git remote add origin。
+
+## 3.日常开发一个功能
+确认当前状态:git status -> 开发功能 -> 检查代码改动：git status 和 git diff -> 运行和测试 -> 保存一个版本 git add . 和 git commit -m "注释改动内容" -> 上传到github：git push
 
 
-ASUS@LAPTOP-HCVVAPPH UCRT64 /d/andriod/WeChat (main)
-$ git commit .
-On branch main
-nothing to commit, working tree clean
-
-ASUS@LAPTOP-HCVVAPPH UCRT64 /d/andriod/WeChat (main)
-$ git 
 
 
 
