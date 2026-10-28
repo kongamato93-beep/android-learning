@@ -248,7 +248,75 @@ public View getView(int position, View convertView, ViewGroup parent) { ... } //
 
 
 ## 4.使用自定义ListView控件，让“微信”分页每行显示好友的头像、姓名、最近消息以及发消息时间。（10分）
+跟上一个差不多
+### 1.做布局
+item_conversation.xml
+### 2.数据在
+DefaultDataSeed
+### 3.连接适配器
+ChatListFragment
+### 4.ListView 向适配器要“几行、第几行是什么”
+ConversationListAdapter
+### 5.头像怎么变成图片
+AvatarLoader 
+
 ## 5.实现点击“微信”分页每行好友后弹出一个Tosast提示框消息。（10分）
+### 1.在ListView上面装上监听事件
+在ChatListFragment:
+```java
+// 点击某一行：先弹 Toast 提示点到了谁，再进聊天页
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Conversation conversation = adapter.getItem(position);
+                if (conversation == null) {
+                    return;
+                }
+                Toast.makeText(requireContext(),
+                        getString(R.string.msg_click_conversation, displayName(conversation)),
+                        Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(requireContext(), ChatActivity.class);
+                intent.putExtra(ChatActivity.EXTRA_CONVERSATION_ID, conversation.getId());
+                startActivity(intent);
+            }
+        });
+```
+
+### 2.辅助把IP转换成名字
+```java
+/** Toast 里显示的名字：取对方的昵称，取不到就退回会话 id，避免显示空白 */
+    private String displayName(Conversation conversation) {
+        Contact peer = repository.getContact(conversation.getPeerId());
+        return peer == null ? conversation.getId() : peer.getName();
+    }
+```
+
+### 3.中文存在string里面
+
 ## 6.参考微信里“我”分页，顶部使用ImageView、TextView控件显示实验三的登录用户头像、姓名。（10分）
+### 1.做布局
+fragment_me.xml
+### 2.加载布局 
+MeFragment
+### 3.数据来源
+LoginUserStore
+### 4.把头像和姓名填进控件
+MeFragment
+
+
 ## 7.使用自定义ListView控件完善“我”分页内列表内容的显示，如服务、收藏、朋友圈、作品、小店与卡包、表情、设置（10分）
+### 1.界面里放 ListView 控件
+fragment_me.xml
+### 2.每一行的布局
+item_me_entry.xml
+### 3.7 项的数据在 MeFragment 里造出来
+### 4.把 7 条数据交给 ListView
+依旧创建自定义适配器
+### 5.适配器MeEntryAdapter
+取数据，刷新，第几行行内容，造行复用行，填入数据
+### 6.点某一行的反应
+MeFragment里面的点击事件
+
 ## 8.参考微信界面修改导航栏底部图标（需要使用矢量图类型图标，位图类型无法正常显示）。（10分）
+###
