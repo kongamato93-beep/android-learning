@@ -319,4 +319,28 @@ item_me_entry.xml
 MeFragment里面的点击事件
 
 ## 8.参考微信界面修改导航栏底部图标（需要使用矢量图类型图标，位图类型无法正常显示）。（10分）
-###
+整条链路：`drawable/` 里画 4 组矢量图 → 每组配一个`selector` 按选中状态二选一 →`activity_main.xml` 用`srcCompat` 引用并加`tint` → 点 Tab 时`setSelected` 触发 selector → 图标变实心、变微信绿。
+### 1.图标
+四组矢量图，在空心图标和filled图标间切换
+### 2.为什么使用矢量图
+本质是位图在高分屏上会被拉糊、`tint` 效果也不稳定
+### 3.用 selector 把“选中/未选中”两套图绑在一起
+4 个 Tab 各有一个`tab_icon_*.xml` ，内容都是“选中时用实心、其他时候用空心”。微信的 tab_icon_chat.xml ：
+### 4.布局里引用图标并指定染色
+activity_main.xml
+```xml
+<ImageView
+    android:layout_width="@dimen/tab_icon_size"
+    android:layout_height="@dimen/tab_icon_size"
+    android:contentDescription="@string/tab_chat"
+    app:srcCompat="@drawable/tab_icon_chat"
+    app:tint="@color/tab_icon_tint" />
+```
+### 5.染色规则 —— tab_icon_tint.xml
+### 6.设置selected状态
+```java
+for (int i = 0; i < tabViews.size(); i++) {
+    tabViews.get(i).setSelected(i == index);
+}
+```
+
